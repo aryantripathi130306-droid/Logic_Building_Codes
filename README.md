@@ -5,4 +5,5 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 |  |
 | ------- |
 | [0007-reverse-integer](https://github.com/aryantripathi130306-droid/Logic_Building_Codes/tree/master/0007-reverse-integer) |
+| [0009-palindrome-number](https://github.com/aryantripathi130306-droid/Logic_Building_Codes/tree/master/0009-palindrome-number) |
 <!---LeetCode Topics End-->
