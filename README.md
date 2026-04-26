@@ -7,6 +7,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | [0007-reverse-integer](https://github.com/aryantripathi130306-droid/Logic_Building_Codes/tree/master/0007-reverse-integer) |
 | [0009-palindrome-number](https://github.com/aryantripathi130306-droid/Logic_Building_Codes/tree/master/0009-palindrome-number) |
 | [0258-add-digits](https://github.com/aryantripathi130306-droid/Logic_Building_Codes/tree/master/0258-add-digits) |
+| [3099-harshad-number](https://github.com/aryantripathi130306-droid/Logic_Building_Codes/tree/master/3099-harshad-number) |
 ## Simulation
 |  |
 | ------- |
