@@ -49,7 +49,7 @@ class Student {
         System.out.println("\t╠════════════════════════════════════╣");
         System.out.printf("\t║ Roll No : %-24d ║\n", rollNumber);
         System.out.printf("\t║ Name    : %-24s ║\n", name);
-        System.out.println("\t╠═══════════════════════════════════╣");
+        System.out.println("\t╠════════════════════════════════════╣");
         System.out.println("\t║ Subject Marks:                     ║");
         for (int i = 0; i < 6; i++) {
             System.out.printf("\t║ Sub %d   : %-24d ║\n", (i + 1), marks[i]);
@@ -58,7 +58,7 @@ class Student {
         System.out.printf("\t║ Total   : %-24d ║\n", total);
         System.out.printf("\t║ Average : %-24.2f ║\n", average);
         System.out.printf("\t║ Grade   : %-24c ║\n", grade);
-        System.out.printf("\t║ Result  : %-24s ║\n", (isPass ? "PASS" : "FAIL"));
+        System.out.printf("\t║ Result  : %-24s ║\n", (isPass ? "PASS" : " FAIL"));
         System.out.println("\t╚════════════════════════════════════╝");
     }
 
@@ -116,7 +116,7 @@ class Batch {
             System.out.print("Enter Marks for Subject " + (i + 1) + " (0-100): ");
             marks[i] = readInt(sc);
             if (marks[i] < 0 || marks[i] > 100) {
-                System.out.println("Error: Invalid marks (must be 0-100).");
+                System.out.println(" Error: Invalid marks (must be 0-100).");
                 return;
             }
         }
@@ -128,7 +128,7 @@ class Batch {
     // Core Feature: Display Students
     void displayStudents() {
         if (studentCount == 0) {
-            System.out.println("No students in batch: " + batchName);
+            System.out.println("ℹ No students in batch: " + batchName);
             return;
         }
 
@@ -155,7 +155,7 @@ class Batch {
     void updateStudent(int roll, Scanner sc) {
         Student s = searchStudent(roll);
         if (s == null) {
-            System.out.println("Error: Student not found.");
+            System.out.println(" Error: Student not found.");
             return;
         }
 
@@ -177,7 +177,7 @@ class Batch {
             }
             s.calculatePerformance();
         }
-        System.out.println("Student updated successfully!");
+        System.out.println("✨ Student updated successfully!");
     }
 
     // Core Feature: Delete Student (Array Shifting)
@@ -199,13 +199,13 @@ class Batch {
             students[i] = students[i + 1];
         }
         studentCount--;
-        System.out.println("Student deleted successfully.");
+        System.out.println(" Student deleted successfully.");
     }
 
     // Core Feature: Analytics
     void displayAnalytics() {
         if (studentCount == 0) {
-            System.out.println("No data available for analytics.");
+            System.out.println("ℹ No data available for analytics.");
             return;
         }
 
@@ -245,7 +245,7 @@ class Batch {
                 }
             }
         }
-        System.out.println("Students sorted by marks (highest to lowest).");
+        System.out.println(" Students sorted by marks (highest to lowest).");
     }
 
     // Helper for robust integer reading
@@ -274,7 +274,7 @@ class Campus {
 
     void addBatch(String name) {
         if (name.trim().isEmpty()) {
-            System.out.println("Error: Batch name cannot be empty.");
+            System.out.println(" Error: Batch name cannot be empty.");
             return;
         }
         if (isDuplicateBatch(name)) {
@@ -282,19 +282,19 @@ class Campus {
             return;
         }
         if (batchCount >= 50) {
-            System.out.println("Error: Campus batch limit reached.");
+            System.out.println(" Error: Campus batch limit reached.");
             return;
         }
         batches[batchCount++] = new Batch(name);
-        System.out.println("Batch '" + name + "' created successfully!");
+        System.out.println(" Batch '" + name + "' created successfully!");
     }
 
     void displayBatches() {
         if (batchCount == 0) {
-            System.out.println("No batches registered in the campus.");
+            System.out.println("ℹ No batches registered in the campus.");
             return;
         }
-        System.out.println("\nREGISTERED BATCHES");
+        System.out.println("\n REGISTERED BATCHES");
         System.out.println("━━━━━━━━━━━━━━━━━━━━");
         for (int i = 0; i < batchCount; i++) {
             System.out.println((i + 1) + ". " + batches[i].batchName + " [" + batches[i].studentCount + " Students]");
@@ -311,7 +311,7 @@ class Campus {
 
     void campusAnalytics() {
         if (batchCount == 0) {
-            System.out.println("No campus data available.");
+            System.out.println("ℹ No campus data available.");
             return;
         }
 
@@ -371,13 +371,13 @@ public class CampusManagementSystem {
         int choice = 0;
         while (choice != 11) {
             printMenu();
-            System.out.print("Selection: ");
+            System.out.print(" Selection: ");
 
             if (sc.hasNextInt()) {
                 choice = sc.nextInt();
                 sc.nextLine(); // Clear buffer
             } else {
-                System.out.println("Invalid Input! Please enter a number.");
+                System.out.println(" Invalid Input! Please enter a number.");
                 sc.next(); // Clear invalid token
                 continue;
             }
@@ -398,7 +398,7 @@ public class CampusManagementSystem {
                     if (bAdd != null)
                         bAdd.addStudent(sc);
                     else
-                        System.out.println("Batch not found.");
+                        System.out.println(" Batch not found.");
                     break;
 
                 case 4:
@@ -407,7 +407,7 @@ public class CampusManagementSystem {
                     if (bDisp != null)
                         bDisp.displayStudents();
                     else
-                        System.out.println("Batch not found.");
+                        System.out.println(" Batch not found.");
                     break;
 
                 case 5:
@@ -420,9 +420,9 @@ public class CampusManagementSystem {
                         if (s != null)
                             s.displayCard();
                         else
-                            System.out.println("Student not found.");
+                            System.out.println(" Student not found.");
                     } else
-                        System.out.println("Batch not found.");
+                        System.out.println(" Batch not found.");
                     break;
 
                 case 6:
@@ -432,7 +432,7 @@ public class CampusManagementSystem {
                         System.out.print("Enter Student Roll Number: ");
                         bUpdate.updateStudent(readInt(sc), sc);
                     } else
-                        System.out.println("Batch not found.");
+                        System.out.println(" Batch not found.");
                     break;
 
                 case 7:
@@ -442,7 +442,7 @@ public class CampusManagementSystem {
                         System.out.print("Enter Student Roll Number: ");
                         bDel.deleteStudent(readInt(sc));
                     } else
-                        System.out.println("Batch not found.");
+                        System.out.println(" Batch not found.");
                     break;
 
                 case 8:
@@ -451,7 +451,7 @@ public class CampusManagementSystem {
                     if (bAnal != null)
                         bAnal.displayAnalytics();
                     else
-                        System.out.println("Batch not found.");
+                        System.out.println(" Batch not found.");
                     break;
 
                 case 9:
@@ -464,15 +464,15 @@ public class CampusManagementSystem {
                     if (bSort != null)
                         bSort.sortStudents();
                     else
-                        System.out.println("Batch not found.");
+                        System.out.println(" Batch not found.");
                     break;
 
                 case 11:
-                    System.out.println("Thank you for using SMART CAMPUS! Exiting...");
+                    System.out.println(" Thank you for using SMART CAMPUS! Exiting...");
                     break;
 
                 default:
-                    System.out.println("Invalid choice. Try again.");
+                    System.out.println(" Invalid choice. Try again.");
             }
         }
         sc.close();
@@ -487,15 +487,15 @@ public class CampusManagementSystem {
 
     private static void printMenu() {
         System.out.println("\n MAIN MENU");
-        System.out.println("1. Add Batch");
-        System.out.println("2. Display Batches");
-        System.out.println("3. Add Student to Batch");
-        System.out.println("4. Display Students of Batch");
-        System.out.println("5. Search Student");
-        System.out.println("6. Update Student");
-        System.out.println("7. Delete Student");
-        System.out.println("8. Batch Analytics");
-        System.out.println("9. Campus Analytics");
+        System.out.println("1.  Add Batch");
+        System.out.println("2.  Display Batches");
+        System.out.println("3.  Add Student to Batch");
+        System.out.println("4.  Display Students of Batch");
+        System.out.println("5.  Search Student");
+        System.out.println("6.  Update Student");
+        System.out.println("7.  Delete Student");
+        System.out.println("8.  Batch Analytics");
+        System.out.println("9.  Campus Analytics");
         System.out.println("10. Sort Students in Batch");
         System.out.println("11. Exit");
     }
